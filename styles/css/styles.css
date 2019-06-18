@@ -1,0 +1,202 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  body > a {
+    text-decoration: none;
+    color: #272727;
+    font-family: sans-serif;
+    font-size: 45px;
+    border: 5px solid #272727;
+    position: relative;
+    padding: 40px 80px;
+    overflow: hidden; }
+    body > a:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1; }
+    body > a:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1; }
+    body > a.effect-1:before {
+      background-color: #fff200;
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      transition: transform 1s; }
+    body > a.effect-1:hover:before {
+      transform: rotate(0deg); }
+    body > a.effect-2 {
+      transition: color 1s; }
+      body > a.effect-2:before {
+        background-color: purple;
+        transform: translateY(100%);
+        transition: transform 1s; }
+      body > a.effect-2:hover {
+        color: #ffffff; }
+        body > a.effect-2:hover:before {
+          transform: translateY(0%); }
+    body > a.effect-3 {
+      transition: color 1s; }
+      body > a.effect-3:before {
+        background-color: #262626;
+        transform: rotateX(90deg);
+        transition: transform 1s; }
+      body > a.effect-3:after {
+        background-color: #262626;
+        transform: rotateY(90deg);
+        transition: transform 1s; }
+      body > a.effect-3:hover {
+        color: #ffffff; }
+        body > a.effect-3:hover:before, body > a.effect-3:hover:after {
+          transform: rotateX(0deg); }
+    body > a.effect-4 {
+      border-color: #e1332d;
+      border-width: 3px;
+      color: #e1332d;
+      text-transform: uppercase;
+      font-family: 'roboto';
+      font-weight: 300;
+      letter-spacing: -2px;
+      transition: all .5s; }
+      body > a.effect-4:hover {
+        font-weight: 900;
+        letter-spacing: 10px;
+        border-width: 7px; }
+    body > a.effect-5 {
+      background-color: #222222;
+      color: #ffffff;
+      border-color: #ffffff; }
+      body > a.effect-5:before {
+        content: 'YEAH!';
+        z-index: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: transform .5s;
+        background-color: #e1332d; }
+      body > a.effect-5:hover:before {
+        transform: translateY(0%); }
+    body > a.effect-6 {
+      transition: all 1s; }
+      body > a.effect-6:before {
+        background-color: #ffffff;
+        height: 50px;
+        transform: translateX(-100%) rotate(45deg);
+        z-index: inherit;
+        transition: transform 1s; }
+      body > a.effect-6:hover {
+        background-color: #e1332d; }
+        body > a.effect-6:hover:before {
+          transform: translateX(100%) rotate(45deg); }
+    body > a.effect-7 {
+      background-color: #272727;
+      color: #272727;
+      border-color: #ffffff;
+      transition: all 1s; }
+      body > a.effect-7:before, body > a.effect-7:after {
+        background-color: #fff200;
+        content: 'Hover Me';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: inherit;
+        transition: transform 1s; }
+      body > a.effect-7:before {
+        transform: translate(-100%, 100%); }
+      body > a.effect-7:hover:before {
+        transform: translate(0, 0); }
+      body > a.effect-7:hover:after {
+        transform: translate(100%, -100%); }
+    body > a.effect-8 {
+      transition: all .5s; }
+      body > a.effect-8:before {
+        content: 'Hover Me';
+        background-color: #272727;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(5);
+        opacity: 0;
+        transition: all .5s;
+        z-index: inherit; }
+      body > a.effect-8:hover:before {
+        opacity: 1;
+        transform: scale(1); }
+  body ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none; }
+    body ul li a {
+      display: block;
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #272727;
+      text-transform: capitalize;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.5s; }
+      body ul li a span {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background-color: #272727;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        transform: scaleY(0);
+        transition: transform 0.5s;
+        transform-origin: top; }
+        body ul li a span:nth-child(2) {
+          left: 25%;
+          transition-delay: .15s; }
+        body ul li a span:nth-child(3) {
+          left: 50%;
+          transition-delay: .3s; }
+        body ul li a span:nth-child(4) {
+          left: 75%;
+          transition-delay: .45s; }
+      body ul li a:hover {
+        color: #ffffff; }
+        body ul li a:hover span {
+          transform: scaleY(1); }
+  body .btn {
+    border: 2px solid tomato;
+    background: none;
+    color: tomato;
+    padding: 20px 40px;
+    font-size: 25px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    transition: all .5s;
+    overflow: hidden; }
+    body .btn:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: tomato;
+      z-index: -1;
+      border-radius: 0 0 50% 50%;
+      transition: all .5s; }
+    body .btn:hover {
+      color: #ffffff; }
+      body .btn:hover:before {
+        height: 190%; }

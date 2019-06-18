@@ -1,0 +1,320 @@
+$black: #272727;
+$black2: #262626;
+$yellow: #fff200;
+$purple: purple;
+$white: #ffffff;
+$red: #e1332d;
+$darkgrey: #222222;
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    text-decoration: none;
+    color: $black;
+    font-family: sans-serif;
+    font-size: 45px;
+    border: 5px solid $black;
+    position: relative;
+    padding: 40px 80px;
+    overflow: hidden;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    // EFFECT 1
+    &.effect-1 {
+      &:before {
+        background-color: $yellow;
+        transform-origin: bottom left;
+        transform: rotate(-90deg);
+        transition: transform 1s;
+      }
+
+      &:hover {
+        &:before {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    // EFFECT 2
+    &.effect-2 {
+      transition: color 1s;
+
+      &:before {
+        background-color: $purple;
+        transform: translateY(100%);
+        transition: transform 1s;
+      }
+
+      &:hover {
+        color: $white;
+
+        &:before {
+          transform: translateY(0%);
+        }
+      }
+    }
+
+    // EFFECT 3
+    &.effect-3 {
+      transition: color 1s;
+
+      &:before {
+        background-color: $black2;
+        transform: rotateX(90deg);
+        transition: transform 1s;
+      }
+
+      &:after {
+        background-color: $black2;
+        transform: rotateY(90deg);
+        transition: transform 1s;
+      }
+
+      &:hover {
+        color: $white;
+
+        &:before,
+        &:after {
+          transform: rotateX(0deg);
+        }
+      }
+    }
+
+    // EFFECT 4
+    &.effect-4 {
+      border-color: $red;
+      border-width: 3px;
+      color: $red;
+      text-transform: uppercase;
+      font-family: 'roboto';
+      font-weight: 300;
+      letter-spacing: -2px;
+      transition: all .5s;
+
+      &:hover {
+        font-weight: 900;
+        letter-spacing: 10px;
+        border-width: 7px;
+      }
+    }
+
+    // EFFECT 5
+    &.effect-5 {
+      background-color: $darkgrey;
+      color: $white;
+      border-color: $white;
+
+      &:before {
+        content: 'YEAH!';
+        z-index: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: transform .5s;
+        background-color: $red;
+      }
+
+      &:hover {
+        &:before {
+          transform: translateY(0%);
+        }
+      }
+    }
+
+    // EFFECT 6
+    &.effect-6 {
+      transition: all 1s;
+
+      &:before {
+        background-color: $white;
+        height: 50px;
+        transform: translateX(-100%) rotate(45deg);
+        z-index: inherit;
+        transition: transform 1s;
+      }
+
+      &:hover {
+        background-color: $red;
+
+        &:before {
+          transform: translateX(100%) rotate(45deg);
+        }
+      }
+    }
+
+    // EFFECT 7
+    &.effect-7 {
+      background-color: $black;
+      color: $black;
+      border-color: $white;
+      transition: all 1s;
+
+      &:before, &:after {
+        background-color: $yellow;
+        content: 'Hover Me';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: inherit;
+        transition: transform 1s;
+      }
+
+      &:before {
+        transform: translate(-100%, 100%);
+      }
+
+      &:hover {
+        &:before {
+          transform: translate(0, 0);
+        }
+
+        &:after {
+          transform: translate(100%, -100%);
+        }
+      }
+    }
+
+    // EFFECT 8
+    &.effect-8 {
+      transition: all .5s;
+
+      &:before {
+        content: 'Hover Me';
+        background-color: $black;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(5);
+        opacity: 0;
+        transition: all .5s;
+        z-index: inherit;
+      }
+
+      &:hover {
+        &:before {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+  }
+
+  // EFFECT 9
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+    li {
+      a {
+        display: block;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: $black;
+        text-transform: capitalize;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.5s;
+
+        span {
+          position: absolute;
+          width: 25%;
+          height: 100%;
+          background-color: $black;
+          z-index: -1;
+          left: 0;
+          top: 0;
+          transform: scaleY(0);
+          transition: transform 0.5s;
+          transform-origin: top;
+
+          &:nth-child(2) {
+            left: 25%;
+            transition-delay: .15s;
+          }
+          &:nth-child(3) {
+            left: 50%;
+            transition-delay: .3s;
+          }
+          &:nth-child(4) {
+            left: 75%;
+            transition-delay: .45s;
+          }
+        }
+
+        &:hover {
+          color: $white;
+
+          span {
+            transform: scaleY(1);
+          }
+        }
+      }
+    }
+  }
+
+  // EFFECT 10
+  .btn {
+    border: 2px solid tomato;
+    background: none;
+    color: tomato;
+    padding: 20px 40px;
+    font-size: 25px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    transition: all .5s;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: tomato;
+      z-index: -1;
+      border-radius: 0 0 50% 50%;
+      transition: all .5s;
+    }
+
+    &:hover {
+      color: $white;
+
+      &:before {
+        height: 190%;
+      }
+    }
+  }
+
+}
